@@ -17,7 +17,7 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-OPENAI_API_KEY = 'sk-proj-jGw6PkYUOOWnJnUinbU5T3BlbkFJmAL3MVW6vHwBr0rPi3Gu'
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 #BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 

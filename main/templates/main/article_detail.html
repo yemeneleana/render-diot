@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    {% load i18n %}
+    <meta charset="UTF-8">
+    <title>{{ article.title }}</title>
+</head>
+<body>
+    <h1>{{ article.title }}</h1>
+    <p><strong>{% trans "Published on" %}:</strong> {{ article.publication_date }}</p>
+    <p><strong>{% trans "Category" %}:</strong> {{ article.category }}</p>
+
+    <!-- Contenu de l'article -->
+    <div>{{ article.content }}</div>
+
+    <!-- Liens pour changer la langue -->
+    <p>
+        <a href="?lang=en">English</a> | <a href="?lang=fr">Français</a>
+    </p>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Chatbot</title>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+<body>
+    <h1>Chatbot</h1>
+    <form method="post">
+        {% csrf_token %}
+        <label for="question">{% trans "Ask a question" %}:</label>
+        <input type="text" id="question" name="question">
+        <button type="submit">{% trans "Submit" %}</button>
+    </form>
+
+    {% if answer %}
+        <h2>Answer:</h2>
+        <p>{% trans "Answer" %}: {{ answer }}</p>
+    {% endif %}
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('form').submit(function(event) {
+                event.preventDefault();
+                var formData = $(this).serialize();
+                $.ajax({
+                    url: '',
+                    method: 'POST',
+                    data: formData,
+                    success: function(response) {
+                        $('#answer').html(response);
+                    },
+                    error: function(xhr, errmsg, err) {
+                        console.log(xhr.status + ": " + xhr.responseText);
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

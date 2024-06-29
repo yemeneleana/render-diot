@@ -1,0 +1,12 @@
+/* styles.css */
+button {
+    background-color: #007bff; /* Couleur de fond */
+    color: #fff; /* Couleur du texte */
+    padding: 10px 20px; /* Espacement interne */
+    border: none; /* Supprimer le bord */
+    cursor: pointer; /* Curseur de souris */
+}
+
+button:hover {
+    background-color: #0056b3; /* Couleur de fond au survol */
+}

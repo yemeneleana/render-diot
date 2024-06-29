@@ -1,0 +1,29 @@
+{% load i18n %}
+<!DOCTYPE html>
+<html lang="{{ LANGUAGE_CODE }}">
+<head>
+    {% load static %}
+    {% load i18n %}
+    <meta charset="UTF-8">
+    <title>{% trans "Article List" %}</title>
+</head>
+<body>
+    <h1>{% trans "Article List" %}</h1>
+    <ul>
+        {% for article in articles %}
+            <li>{{ article.title }} - {{ article.publication_date }}</li>
+        {% endfor %}
+    </ul>
+    <h1>{% trans "Articles on Machine Learning" %}</h1>
+    <ul>
+        {% for article in articles %}
+            <li>
+                <a href="{% url 'article_detail' article.pk %}">
+                    {{ article.title }}
+                </a>
+            </li>
+        {% endfor %}
+    </ul>
+    <a href="/?lang=en">English</a> | <a href="/?lang=fr">Français</a>
+</body>
+</html>
